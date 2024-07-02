@@ -20,7 +20,7 @@ export const Post: FC<PostProps> = ({post}) => {
 
       <div className=" flex justify-center items-center mx-auto">
         <div className="bg-gray-300 w-full flex items-center justify-center rounded-md">
-          <Image src={process.env.NEXT_PUBLIC_STRAPI_URL + post.attributes?.imgUrl.data?.attributes?.url!} alt={post.attributes?.imgUrl.data?.attributes?.caption!} width={'864'} height={'864'} />
+          <Image src={post.attributes?.imgUrl.data?.attributes?.url!} alt={post.attributes?.imgUrl.data?.attributes?.caption!} width={'864'} height={'864'} />
         </div>
       </div>
         <h2 className="text-xl font-bold my-2">{post.attributes?.title}</h2>
@@ -28,7 +28,7 @@ export const Post: FC<PostProps> = ({post}) => {
       <hr/>
 
       {
-        post?.attributes?.comments?.data?.length && post.id && (
+        !!post?.attributes?.comments?.data?.length && post.id && (
           <CommentList postId={post.id} comments={post.attributes.comments.data as TComment[]}/>
         )
       }

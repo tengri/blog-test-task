@@ -2,7 +2,7 @@ import React from 'react';
 
 import Link from 'next/link'
 
-import { TPost } from '../types';
+import { TPost } from '@/types';
 import Image from "next/image";
 
 interface IProps {
@@ -13,7 +13,7 @@ const PostPreview: React.FC<IProps> = ({post}) => {
   return (
     <div className="flex bg-white rounded-lg p-4 sm:flex-row flex-col gap-4">
       <div className="flex justify-center items-center w-full sm:w-auto">
-        <Image src={process.env.NEXT_PUBLIC_STRAPI_URL + post.attributes?.imgUrl?.data?.attributes?.url!} alt={post.attributes?.imgUrl?.data?.attributes?.caption!} className={'object-contain'} width={'500'} height={'500'} />
+        <Image src={post.attributes?.imgUrl?.data?.attributes?.url!} alt={post.attributes?.imgUrl?.data?.attributes?.caption!} className={'object-contain'} width={'500'} height={'500'} />
       </div>
 
       <div className="w-2/3 ml-4">

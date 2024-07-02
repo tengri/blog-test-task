@@ -3,8 +3,8 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'ancient-cactus-f8e2cc0e6a.strapiapp.com',
-                pathname: '/uploads/**',
+                hostname: 'ancient-cactus-f8e2cc0e6a.media.strapiapp.com',
+                pathname: '/**',
             },
         ],
     },
