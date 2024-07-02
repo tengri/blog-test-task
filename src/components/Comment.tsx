@@ -1,5 +1,5 @@
 import React from 'react';
-import { TComment } from '../types';
+import { TComment } from '@/types';
 
 export interface CommentProps {
   comment: TComment;
@@ -7,7 +7,7 @@ export interface CommentProps {
 
 export const Comment: React.FC<CommentProps> = ({ comment}) => {
   return (
-    <div className="border-t border-gray-200 pt-2 mt-2 bg-gray-50">
+    <div className="pt-2 mt-2 bg-gray-50 p-2">
       <p className="text-gray-800">{comment.attributes?.content}</p>
     </div>
   );
